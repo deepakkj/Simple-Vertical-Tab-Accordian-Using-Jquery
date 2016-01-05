@@ -1,0 +1,104 @@
+
+<!--SIMPLE VERTICAL TAB ACCORDIAN USING JQUERY-->
+<!--BY DEEPAK KUMAR JAIN-->
+<!--deepakkumarjain21@gmail.com-->
+
+<!--If you have any doubts, help or suggestions for improvement kindly mail or comment/push/fork it in Github-->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+ 
+  <title>SIMPLE VERTICAL TAB ACCORDIAN USING JQUERY</title>
+   <meta charset="utf-8">
+   <meta name='description' content='SIMPLE VERTICAL TAB ACCORDIAN USING JQUERY'>
+   <meta name='subject' content='SIMPLE VERTICAL TAB ACCORDIAN USING JQUERY'>
+   <meta name='author' content='Deepak Kumar Jain, deepakkumarjain21@gmail.com'>
+   <meta name ="keyword" content="accordian, jquery, vertical, tab ,deepak kumar jain, deepak, kumar, jain">
+   <meta name='robots' content='index,follow'>
+  <!--CSS STARTS-->
+  <style>
+	  h1{
+	  text-align: center;
+	  }
+	ul > li {
+	  width: 250px;
+		background-color: lightgray;
+		  list-style: none;
+		  overflow: hidden;
+	  }
+	ul > li > ul {
+  display: none;
+				background-color: bisque;
+}
+	  ul > li > ul > li{
+	  		background-color: bisque;
+	  }
+</style>	
+  <!--CSS ENDS-->
+</head>
+<body>
+
+<h1>SIMPLE VERTICAL TAB ACCORDIAN USING JQUERY</h1>
+ 
+ <h3>Click on the tabs to reveal the content inside them.</h3>
+
+ <!--VERTICAL ACCORDIAN STARTS-->
+  <ul>
+   <!--Tab 1 Starts-->
+    <li>Tab 1
+      <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+		</ul>
+    </li>
+       <!--Tab 1 Ends-->
+        <!--Tab 2 Starts-->
+    <li>Tab 2
+      <ul>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+      </ul>
+      </li>
+       <!--Tab 2 Ends-->
+            <!--Tab 3 Starts-->
+    <li>Tab 3
+      <ul>
+        <li>g</li>
+        <li>h</li>
+        <li>i</li>
+      </ul>
+      </li>
+       <!--Tab 3 Ends-->
+               <!--Tab 4 Starts-->
+    <li>Tab 4
+      <ul>
+        <li>j</li>
+        <li>k</li>
+        <li>l</li>
+      </ul>
+      </li>
+       <!--Tab 4 Ends-->
+  </ul>
+   <!--VERTICAL TAB ACCORDIAN ENDS-->
+   
+   <!--JQUERY V1.11.3-->
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <!--VERTICAL TAB ACCORDIAN JQUERY STARTS-->
+  <script>
+$('body > ul >li').click(function() {
+	//To prevent the currently opened tab to open again when clicked on it
+	if ( $(this).find('ul').first().css('display') == 'block' ){
+	$('body > ul >li > ul').slideUp();
+		return false;
+	}
+	$('body > ul >li > ul').slideUp();	//Close all the opened tabs
+	$(this).find('ul').first().slideToggle();	//Open the tab
+});
+	</script>
+	 <!--VERTICAL TAB ACCORDIAN JQUERY ENDS-->
+</body>
+</html>
